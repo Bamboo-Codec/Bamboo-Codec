@@ -22,7 +22,8 @@ jobs:
           plugin_habits_facts: yes
           plugin_habits_charts: yes
           plugin_habits_trim: yes       # Oculta horas vacías para evitar errores de renderizado
-          config_timezone: Europe/Madrid 
+          config_timezone: America/Montevideo 
           
           # Esto ayuda a diagnosticar si el error persiste
           debug: yes
+
