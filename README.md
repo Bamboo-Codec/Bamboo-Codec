@@ -1,6 +1,4 @@
-<h1 align="center">¡Hi! Im Gabriel da Silva</h1>
-
-### About me
+<h1 align="center">¡Hola! Soy Gabriel da Silva</h1>
 
 ## Sobre mí
 
