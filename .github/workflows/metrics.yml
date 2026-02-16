@@ -1,10 +1,7 @@
 name: Metrics
 on:
-  # Se actualiza cada 24 horas
   schedule: [{cron: "0 0 * * *"}]
-  # Permite ejecutarlo manualmente
   workflow_dispatch:
-  # Se ejecuta al subir cambios a la rama principal
   push: {branches: ["master", "main"]}
 
 jobs:
@@ -15,13 +12,17 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Tu token guardado en Secrets
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Configuración del plugin Habits
-          base: "" # Desactiva el resto de stats básicas si solo quieres Habits
+          base: "" 
           plugin_habits: yes
-          plugin_habits_days: 14      # Días de historial a analizar
-          plugin_habits_facts: yes    # Muestra hechos (ej. "el más activo los viernes")
-          plugin_habits_charts: yes   # Muestra gráficos de barras
-          config_timezone: Europe/Madrid # Ajusta a tu zona horaria
+          plugin_habits_from: 200       # Analiza los últimos 200 eventos
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+          plugin_habits_trim: yes       # Oculta horas vacías para evitar errores de renderizado
+          config_timezone: Europe/Madrid 
+          
+          # Esto ayuda a diagnosticar si el error persiste
+          debug: yes
