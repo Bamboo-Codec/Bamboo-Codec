@@ -32,6 +32,7 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 <br>
 
 - **Databases**:
+  
   [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
   
 
@@ -56,8 +57,8 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 
 - **Social media**:
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-da-silva-dev?follow_check=true)
-[![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white)](https://www.threads.com/@pandabear.og)
+    [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gabriel-da-silva-dev?follow_check=true)
+    [![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white)](https://www.threads.com/@pandabear.og)
 
   
 
