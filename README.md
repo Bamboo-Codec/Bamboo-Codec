@@ -56,3 +56,4 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 </tr>
 </table>
 
+## ![Mis hábitos de GitHub](github-metrics.svg)
