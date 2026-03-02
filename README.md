@@ -59,10 +59,11 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 ## Proyectos
 
 <details>
-  <summary><b>[Shell notify](https://github.com/Bamboo-Codec/shell-notify)</b></summary>
+  <summary><b><a href="https://github.com/Bamboo-Codec/shell-notify">Shell notify</a></b></summary>
   <p>Reproduce un sonido para notificar que un proceso en la terminal ha finalizado.</p>
 </details>
+
 <details>
-  <summary><b>[example-Crud-Abstraction](https://github.com/Bamboo-Codec/example-Crud-Abstraction)</b></summary>
+  <summary><b><a href="https://github.com/Bamboo-Codec/example-Crud-Abstraction">example-Crud-Abstraction</a></b></summary>
   <p>Un ejemplo práctico de una abstracción de CRUD en arquitectura User-Scoped en Laravel.</p>
 </details>
