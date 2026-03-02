@@ -55,3 +55,15 @@ In my free time, I build developer tools (dev tools) and enjoy teaching what I l
 </td>
 </tr>
 </table>
+
+## Projects
+
+<details>
+  <summary><b><a href="https://github.com/Bamboo-Codec/shell-notify">Shell notify</a></b></summary>
+  <p>Plays a sound notification to signal when a terminal process has finished.</p>
+</details>
+
+<details>
+  <summary><b><a href="https://github.com/Bamboo-Codec/example-Crud-Abstraction">example-Crud-Abstraction</a></b></summary>
+  <p>A practical example of CRUD abstraction using User-Scoped architecture in Laravel.</p>
+</details>
