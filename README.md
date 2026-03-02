@@ -9,7 +9,7 @@ Soy desarrollador web y actualmente trabajo para una empresa uruguaya que brinda
 En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y disfruto enseñar lo que aprendo a través de mis proyectos personales. Me importa que mi código esté bien documentado, sea limpio y mantenible.
 
 ### 🚀 Proyecto actual
-- Software de gestión financiera (proyecto personal)
+- Software de gestión financiera personal
 
 ### 📫 Contacto
 - bamboo-codec@gmail.com
@@ -56,4 +56,9 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 </tr>
 </table>
 
-## ![Mis hábitos de GitHub](./github-metrics.svg)
+<details>
+  <summary><b>[Shell notify](https://github.com/Bamboo-Codec/shell-notify)</b></summary>
+  <p>Reproduce un sonido para notificar que un proceso en la terminal ha finalizado.</p>
+  <summary><b>[example-Crud-Abstraction](https://github.com/Bamboo-Codec/example-Crud-Abstraction)</b></summary>
+  <p>Un ejemplo práctico de una abstracción de CRUD en arquitectura User-Scoped en Laravel.</p>
+</details>
