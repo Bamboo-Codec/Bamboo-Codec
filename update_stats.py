@@ -20,7 +20,7 @@ since = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
 month_name = now.strftime("%B %Y")
 
 
-print(f"Analizando actividad de {moth_name}...")
+print(f"Analizando actividad de {month_name}...")
 
 # Stats
 stats = {
