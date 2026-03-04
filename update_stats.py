@@ -35,8 +35,10 @@ try:
         for key in stats.keys():
             if msg.startswith(key):
                 stats[key] += 1
-except Exception:
-    continue
+#except:
+    # continue
+except:
+    print("Error al acceder al repositorio")
 
 # 3. Generar la tabla de Markdown
 tabla = f"""
