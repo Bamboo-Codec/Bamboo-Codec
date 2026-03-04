@@ -33,8 +33,8 @@ for repo in g.get_user().get_repos():
             match = re.match(r"^(feat|fix|docs|refactor|chore|task)(\(.+\))?:", msg)
             if match:
                 stats[match.group(1)] += 1
-    except Exception as e:
-        print(f"Error en {repo.name}: {e}")
+    except:
+        continue
 
 # 3. Generar la tabla de Markdown
 tabla = f"""
