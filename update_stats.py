@@ -1,7 +1,7 @@
 import os
 import re
 from datetime import datetime, timedelta
-from github import Auth
+from github import Github, Auth
 
 token = os.getenv('GH_TOKEN')
 auth = Auth.Token(token)
