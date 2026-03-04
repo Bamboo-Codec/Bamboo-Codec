@@ -22,14 +22,13 @@ print(f"Analizando actividad de {moth_name}...")
 
 stats = {"feat": 0, "fix": 0, "docs": 0, "refactor": 0, "chore": 0, "task": 0}
 
-user_login = g.get_user().login
-for repo in g.get_user(user_login).get_repos():
+for repo in user.get_repos():
     if repo.fork:
         continue
 
     try:
         # Usamos user_login explícitamente
-        commits = repo.get_commits(since=since, author=user_login)
+        commits = repo.get_commits(since=since, author=user.login)
         for c in commits:
             msg = c.commit.message.lower()
             # expresion regular
