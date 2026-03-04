@@ -35,7 +35,7 @@ try:
         for key in stats.keys():
             if msg.startswith(key):
                 stats[key] += 1
-except:
+except Exception:
     continue
 
 # 3. Generar la tabla de Markdown
