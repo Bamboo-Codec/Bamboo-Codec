@@ -15,9 +15,26 @@ user = g.get_user()
 print(f"Autenticado como: {user.login}")
 
 # Fecha (inicio del mes actual)
+MONTHS = {
+    "es": [
+        "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+        "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    ],
+    "en": [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ]
+}
+
 now = datetime.utcnow()
 since = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
 month_name = now.strftime("%B %Y")
+
+month_number = now.month - 1
+year = now.year
+
+month_name_es = f"{MONTHS['es'][month_number]} {year}"
+month_name_en = f"{MONTHS['en'][month_number]} {year}"
 
 
 print(f"Analizando actividad de {month_name}...")
@@ -47,8 +64,8 @@ for repo in user.get_repos():
         print(f"Error en repo {repo.name}: {e}")
 
 # 3. Generar la tabla de Markdown
-table = f"""
-### 📊 Actividad en {month_name}
+table_es = f"""
+### 📊 Actividad en {month_name_es}
 | Tipo | Cantidad |
 | :--- | :---: |
 | ✨ Features | {stats['feat']} |
@@ -61,28 +78,53 @@ table = f"""
 *Actualizado el: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC*
 """
 
+table_en = f"""
+### 📊 Activity in {month_name_en}
+| Type | Count |
+| :--- | :---: |
+| ✨ Features | {stats['feat']} |
+| 🐛 Fixes | {stats['fix']} |
+| 📝 Docs | {stats['docs']} |
+| 🔨 Refactor | {stats['refactor']} |
+| 🔧 Chore | {stats['chore']} |
+| 📌 Task | {stats['task']} |
+
+*Updated on: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC*
+"""
+
 # Inyectar en README
-with open("README.md", "r", encoding="utf-8") as f:
-    content = f.read()
+def update_readme(filename, table):
+    if not os.path.exists(filename):
+        print(f"{filename} no existe, se omite.")
+        return
 
-start_tag = "start_stats"
-end_tag = "end_stats"
+    with open(filename, "r", encoding="utf-8") as f:
+        content = f.read()
 
-pattern = f"{start_tag}.*?{end_tag}"
+    start_tag = "<!-- start_stats -->"
+    end_tag = "<!-- end_stats -->"
 
-if not re.search(pattern, content, flags=re.DOTALL):
-    raise Exception("No se encontró el bloque start_stats / end_stats en README.md")
+    pattern = f"{start_tag}.*?{end_tag}"
 
-new_content = re.sub(
-    pattern,
-    f"{start_tag}\n{table}\n{end_tag}",
-    content,
-    flags=re.DOTALL
-)
+    if not re.search(pattern, content, flags=re.DOTALL):
+        print(f"No se encontraron tags en {filename}")
+        return
 
-if new_content != content:
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(new_content)
-    print("README actualizado.")
-else:
-    print("Sin cambios en README.")
+    new_content = re.sub(
+        pattern,
+        f"{start_tag}\n{table}\n{end_tag}",
+        content,
+        flags=re.DOTALL
+    )
+
+    if new_content != content:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print(f"{filename} actualizado.")
+    else:
+        print(f"{filename} sin cambios.")
+
+
+# Actualizar readme
+update_readme("README.md", table_es)
+update_readme("README.en.md", table_en)

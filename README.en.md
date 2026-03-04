@@ -67,3 +67,6 @@ In my free time, I build developer tools (dev tools) and enjoy teaching what I l
   <summary><b><a href="https://github.com/Bamboo-Codec/example-Crud-Abstraction">example-Crud-Abstraction</a></b></summary>
   <p>A practical example of CRUD abstraction using User-Scoped architecture in Laravel.</p>
 </details>
+
+<!-- start_stats -->
+<!-- end_stats -->
