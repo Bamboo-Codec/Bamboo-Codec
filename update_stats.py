@@ -1,6 +1,6 @@
 import os
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, UTC
 from github import Github, Auth
 
 token = os.getenv("GH_TOKEN")
@@ -26,7 +26,7 @@ MONTHS = {
     ]
 }
 
-now = datetime.utcnow()
+now = datetime.now(UTC)
 since = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
 month_name = now.strftime("%B %Y")
 
@@ -125,4 +125,4 @@ def update_readme(filename, table):
 
 # Actualizar readme
 update_readme("README.md", table_es)
-update_readme("README.en.md", table_en)
+update_readme("README_EN.md", table_en)
