@@ -1,7 +1,9 @@
 import os
 import re
 from datetime import datetime, timedelta
-from github import Github
+from github import Auth
+auth = Auth.Token(token)
+g = Github(auth=auth)
 
 # 1. Configuración
 token = os.getenv('GH_TOKEN')
@@ -17,8 +19,12 @@ stats = {"feat": 0, "fix": 0, "docs": 0, "refactor": 0, "chore": 0, "task":0}
 
 print(f"Analizando actividad de {moth_name}...")
 
-# 2. Recolectar datos
-for repo in user.get_repos():
+repo = g.get_repo("Bamboo-Codec/Bamboo-Codec")
+
+# 2. Recolectar datos 
+
+# g.get_user(user.login).get_repos()
+for repo:
     # Solo repos propios, no forks
     if repo.fork: continue
     
