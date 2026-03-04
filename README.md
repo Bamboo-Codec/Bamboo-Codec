@@ -68,5 +68,5 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
   <p>Un ejemplo práctico de una abstracción de CRUD en arquitectura User-Scoped en Laravel.</p>
 </details>
 
-`start_stats`
-`end_stats`
+start_stats
+end_stats

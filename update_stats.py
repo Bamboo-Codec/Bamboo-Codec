@@ -1,18 +1,14 @@
 import os
 import re
 from datetime import datetime, timedelta
-from github import Github, Auth
-
-token = os.getenv('GH_TOKEN')
-auth = Auth.Token(token)
-g = Github(auth=auth)
-user = g.get_user()
+from github import Github
 
 # 1. Configuración
 token = os.getenv('GH_TOKEN')
 g = Github(token)
 user = g.get_user()
-# Fecha de hace 30 días
+
+# Fecha
 now = datetime.now()
 since = now.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
 # Para que el README se vea más claro, guardamos el nombre del mes
@@ -22,26 +18,23 @@ stats = {"feat": 0, "fix": 0, "docs": 0, "refactor": 0, "chore": 0, "task":0}
 
 print(f"Analizando actividad de {moth_name}...")
 
-repo = g.get_repo("Bamboo-Codec/Bamboo-Codec")
-
 # 2. Recolectar datos 
 
-# for repo in g.get_user(user.login).get_repos():
-    # Solo repos propios, no forks
-#    if repo.fork: continue
-    
-try:
-    commits = repo.get_commits(since=since, author=user.login)
-    for c in commits:
-        msg = c.commit.message.lower()
-        # Buscamos el patrón "tipo: mensaje" o "tipo(scope): mensaje"
-        for key in stats.keys():
-            if msg.startswith(key):
-                stats[key] += 1
-#except:
-    # continue
-except:
-    print("Error al acceder al repositorio")
+stats = {"feat": 0, "fix": 0, "docs": 0, "refactor": 0, "chore": 0, "task": 0}
+
+for repo in g.get_user().get_repos():
+    if repo.fork:
+        continue
+
+    try:
+        commits = repo.get_commits(since=since, author=user.login)
+        for c in commits:
+            msg = c.commit.message.lower()
+            match = re.match(r"^(feat|fix|docs|refactor|chore|task)(\(.+\))?:", msg)
+            if match:
+                stats[match.group(1)] += 1
+    except Exception as e:
+        print(f"Error en {repo.name}: {e}")
 
 # 3. Generar la tabla de Markdown
 tabla = f"""
