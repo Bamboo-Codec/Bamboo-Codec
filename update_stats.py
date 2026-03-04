@@ -65,7 +65,7 @@ for repo in user.get_repos():
 
 # 3. Generar la tabla de Markdown
 table_es = f"""
-### 📊 Actividad en {month_name_es}
+### 📊 Actividad de {month_name_es}
 | Tipo | Cantidad |
 | :--- | :---: |
 | ✨ Features | {stats['feat']} |
@@ -75,7 +75,6 @@ table_es = f"""
 | 🔧 Chore | {stats['chore']} |
 | 📌 Task | {stats['task']} |
 
-*Actualizado el: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC*
 """
 
 table_en = f"""
@@ -89,7 +88,6 @@ table_en = f"""
 | 🔧 Chore | {stats['chore']} |
 | 📌 Task | {stats['task']} |
 
-*Updated on: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC*
 """
 
 # Inyectar en README
