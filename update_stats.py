@@ -1,11 +1,11 @@
 import os
 import re
 from datetime import datetime, timedelta
-from github import Github
+from github import Github, Auth
 
-# 1. Configuración
 token = os.getenv('GH_TOKEN')
-g = Github(token)
+auth = Auth.Token(token)
+g = Github(auth=auth)
 user = g.get_user()
 
 # Fecha
