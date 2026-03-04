@@ -29,12 +29,12 @@ repo = g.get_repo("Bamboo-Codec/Bamboo-Codec")
     
 try:
     commits = repo.get_commits(since=since, author=user.login)
-for c in commits:
-    msg = c.commit.message.lower()
-    # Buscamos el patrón "tipo: mensaje" o "tipo(scope): mensaje"
-    for key in stats.keys():
-        if msg.startswith(key):
-            stats[key] += 1
+    for c in commits:
+        msg = c.commit.message.lower()
+        # Buscamos el patrón "tipo: mensaje" o "tipo(scope): mensaje"
+        for key in stats.keys():
+            if msg.startswith(key):
+                stats[key] += 1
 except:
     continue
 
