@@ -87891,3 +87891,13 @@
 
 *Actualizado el: 2026-03-04 11:00:10*
 
+<<<<<<< HEAD
+=======
+<details>
+  <summary><b><a href="https://github.com/Bamboo-Codec/example-Crud-Abstraction">example-Crud-Abstraction</a></b></summary>
+  <p>Un ejemplo práctico de una abstracción de CRUD en arquitectura User-Scoped en Laravel.</p>
+</details>
+
+`start_stats`
+`end_stats`
+>>>>>>> 9dbb8aa (fix: intento 9)

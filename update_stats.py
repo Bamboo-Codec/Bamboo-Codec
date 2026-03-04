@@ -62,8 +62,8 @@ with open("README.md", "r", encoding="utf-8") as f:
     content = f.read()
 
 # Buscamos etiquetas especiales para saber dónde escribir
-start_tag = ""
-end_tag = ""
+start_tag = "start_stats"
+end_tag = "end_stats"
 
 pattern = f"{start_tag}.*?{end_tag}"
 new_content = re.sub(pattern, f"{start_tag}\n{tabla}\n{end_tag}", content, flags=re.DOTALL)
