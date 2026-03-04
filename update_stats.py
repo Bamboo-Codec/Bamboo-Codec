@@ -23,10 +23,9 @@ repo = g.get_repo("Bamboo-Codec/Bamboo-Codec")
 
 # 2. Recolectar datos 
 
-# g.get_user(user.login).get_repos()
-for repo:
+# for repo in g.get_user(user.login).get_repos():
     # Solo repos propios, no forks
-    if repo.fork: continue
+#    if repo.fork: continue
     
     try:
         commits = repo.get_commits(since=since, author=user.login)
