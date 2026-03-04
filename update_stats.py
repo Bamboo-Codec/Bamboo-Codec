@@ -3,10 +3,10 @@ import re
 from datetime import datetime, timedelta
 from github import Auth
 
-g = Github(auth=auth)
 token = os.getenv('GH_TOKEN')
-user = g.get_user()
 auth = Auth.Token(token)
+g = Github(auth=auth)
+user = g.get_user()
 
 # Fecha
 now = datetime.now()
