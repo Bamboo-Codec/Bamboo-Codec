@@ -57,7 +57,7 @@ for repo in user.get_repos():
         commits = repo.get_commits(since=since, author=user.login)
         for commit in commits:
             message = commit.commit.message.lower()
-            match = re.match(r"^(feat|fix|docs|doc|refactor|chore|task)(\(.+\))?:", message)
+            match = re.match(r"^(feat|fix|docs|refactor|chore|task)(\(.+\))?:", message)
             if match:
                 stats[match.group(1)] += 1
     except Exception as e:
