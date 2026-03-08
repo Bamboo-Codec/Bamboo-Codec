@@ -74,8 +74,8 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 | Tipo | Cantidad |
 | :--- | :---: |
 | ✨ Features | 1 |
-| 🐛 Fixes | 21 |
-| 📝 Docs | 0 |
+| 🐛 Fixes | 25 |
+| 📝 Docs | 20 |
 | 🔨 Refactor | 0 |
 | 🔧 Chore | 0 |
 | 📌 Task | 0 |
