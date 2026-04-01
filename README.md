@@ -70,14 +70,14 @@ En mi tiempo libre desarrollo herramientas para desarrolladores (dev tools) y di
 
 <!-- start_stats -->
 
-### 📊 Actividad de Marzo 2026
+### 📊 Actividad de Abril 2026
 | Tipo | Cantidad |
 | :--- | :---: |
-| ✨ Features | 1 |
-| 🐛 Fixes | 25 |
-| 📝 Docs | 170 |
+| ✨ Features | 0 |
+| 🐛 Fixes | 0 |
+| 📝 Docs | 0 |
 | 🔨 Refactor | 0 |
-| 🔧 Chore | 3 |
+| 🔧 Chore | 0 |
 | 📌 Task | 0 |
 
 
